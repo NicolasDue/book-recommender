@@ -11,7 +11,9 @@ services:
       - DATABASE_URL=postgresql://user:password@db:5432/dbname
 
   db:
-    build: ./database
+    build:
+      context: .
+      dockerfile: database/Dockerfile
     ports:
       - "5432:5432"
     environment:
