@@ -7,7 +7,7 @@ class LazyRecommenderDict(dict):
             value = DummyBookRecommender()
             self[key] = value
             return value
-        if key == "colaborative filtering":
+        if key == "collaborative":
             value = CollaborativeFilteringRecommender()
             self[key] = value
             return value
