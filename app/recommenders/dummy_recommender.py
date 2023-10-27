@@ -2,5 +2,5 @@ from .base_recommender import BaseBookRecommender
 
 class DummyBookRecommender(BaseBookRecommender):
 
-    def recommend(self, book_scores):
+    async def recommend(self, book_scores, size):
         return book_scores

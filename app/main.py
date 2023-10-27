@@ -1,5 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from recommenders.dummy_recommender import DummyBookRecommender
 from models.request_models import RecommendationRequest
 from models.response_models import RecommendationResponse, BookRecommendation
 from db_handler import connect, disconnect, get_book_titles_by_ids
@@ -27,7 +26,7 @@ async def recommend_books(data: RecommendationRequest):
     except KeyError:
         raise HTTPException(status_code=400, detail=f"Recommender {data.recommender} not found")
     
-    recommendations = recommender.recommend([(book_score.book_id, book_score.score) for book_score in data.book_scores])
+    recommendations = await recommender.recommend([(book_score.book_id, book_score.score) for book_score in data.book_scores], size=data.size)
 
     # Get all book titles in one database call.
     book_ids = [book_id for book_id, _ in recommendations]
