@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Tuple
+from typing import List
 
 class BookScore(BaseModel):
     book_id: int
@@ -8,3 +8,4 @@ class BookScore(BaseModel):
 class RecommendationRequest(BaseModel):
     recommender: str
     book_scores: List[BookScore]
+    size: int
