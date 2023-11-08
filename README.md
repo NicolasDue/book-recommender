@@ -6,6 +6,8 @@ If you want to locally deploy the API, you have to copy the [Amazon Books Review
 - data/raw/books_data.csv
 - data/raw/Books_rating.csv
 
+You can then run `docker compose build` and `docker compose run`
+
 ## Project Overview
 In today's digital age, with the vast plethora of books available online, finding the next best book to read can be overwhelming. This project aims to develop a recommendation system that curates a list of books tailored to users' tastes, utilizing both Collaborative Filtering and Content-Based Filtering methodologies.
 
