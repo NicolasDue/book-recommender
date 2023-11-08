@@ -1,6 +1,11 @@
 # Personalized Book Recommender System
 Leveraging the Amazon Books Reviews dataset to create a system that recommends books based on users' reading history and preferences.
 
+## Very Important!
+If you want to locally deploy the API, you have to copy the [Amazon Books Reviews](https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews) dataset into a data/raw (a folder that must be created manually the first time), as the docker containers will expect these files to exist:
+- data/raw/books_data.csv
+- data/raw/Books_rating.csv
+
 ## Project Overview
 In today's digital age, with the vast plethora of books available online, finding the next best book to read can be overwhelming. This project aims to develop a recommendation system that curates a list of books tailored to users' tastes, utilizing both Collaborative Filtering and Content-Based Filtering methodologies.
 
